@@ -82,16 +82,13 @@ Turn book highlights and reading notes into Anki-importable flashcards.
 
 ## 构建
 
-仓库只有单个 `Program.cs`（C# 控制台程序，.NET 6+ 可用）：
-
 ```bash
-dotnet new console -n GenAnkiData
-cd GenAnkiData
-# 用本仓库的 Program.cs 覆盖项目里的同名文件
-dotnet publish -c Release -o out
+git clone https://github.com/liushengliuyun/note-format-for-importing-anki.git
+cd note-format-for-importing-anki
+dotnet publish -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -o publish
 ```
 
-之后把 `out/GenAnkiData.exe` 放在哪运行都行，它总是扫描“运行时所在目录”并输出到该目录。Visual Studio 用户：新建控制台项目 → 替换 `Program.cs` → F5。
+生成单文件 `publish/GenAnkiData.exe`（自带 .NET 运行时，目标机器无需安装 .NET）。把它放到笔记文件所在目录运行即可；也可以不开单文件打包，直接 `dotnet run`（同样以运行时所在目录为扫描根）。Visual Studio 用户：打开 `GenAnkiData.csproj` → F5。
 
 ## 注意事项
 
