@@ -4,6 +4,8 @@ Turn book highlights and reading notes into Anki-importable flashcards.
 
 把读书笔记（划线句子 + 批注）批量转换成 Anki 可直接导入的 `result.txt`：每条划线一行、逗号分隔字段、自动去重合并，导入 Anki 即成卡片。
 
+不想自己构建的话，直接从 [Releases](https://github.com/liushengliuyun/note-format-for-importing-anki/releases) 下载 `GenAnkiData-win-x64.exe`（自包含 .NET 8 单文件，目标机器无需安装运行时）。
+
 ## 它做了什么
 
 1. 递归扫描程序运行目录下所有 `*anki.txt` 文件（如 `百年孤独anki.txt`）；
